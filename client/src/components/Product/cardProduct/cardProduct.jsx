@@ -97,7 +97,7 @@ export const CardProduct = ({
         </Link>
         <div className={styles.description}>
           {userActive.isActive === true ? (
-            <div>
+            <div className={styles.divFav}>
               {isFav ? (
                 <button className={styles.favButton} onClick={handleFavorite}>
                   <h3 style={{ color: "#000924" }}>
@@ -113,6 +113,7 @@ export const CardProduct = ({
               )}
             </div>
           ) : null}
+          <div className={styles.divName}>
           <NavLink
             title="Detail Product"
             to={`/productid/${id}`}
@@ -121,6 +122,8 @@ export const CardProduct = ({
           >
             <h6 className={styles.title}>{name}</h6>
           </NavLink>
+          </div>
+          <div className={styles.info}>
           <h6 className={styles.category}> {category}</h6>
           <span className={styles.priceLabel}>
             {t("cardProduct.brand", { lng: currentLanguage })}
@@ -134,12 +137,16 @@ export const CardProduct = ({
             {t("cardProduct.price", { lng: currentLanguage })}
           </span>
           <h6 className={styles.price}>${salePrice}</h6>
+          </div>
+          <div className={styles.divBtn}>
           <button
             className={styles.buttonCart}
             onClick={() => handledAddToCart(product)}
           >
             {t("cardProduct.add-to-cart", { lng: currentLanguage })}
           </button>
+
+          </div>
         </div>
       </div>
     </StyledApp>

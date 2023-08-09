@@ -185,7 +185,21 @@
     transition: .3s;
   }
 }
+.moonBtn{
+  background-color: none;
+}
 
+.casa{
+  font-size: 30px;
+  margin-top: 0.4rem;
+  margin-left: 0.5rem;
+    transition: .2s;
+    &:hover{
+        transform: scale(0.96);
+        transition: .3s;
+        cursor: pointer;
+    }
+}
 
     /* ANIMATION */
 
